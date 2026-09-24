@@ -106,3 +106,35 @@ connectors:
     auth:
       provider: static_token
       secret_key: SLACK_BOT_TOKEN
+
+  # --- M8Flow-contract connectors -------------------------------------
+  # Separate ids from the connectors above: these keep the legacy M8Flow
+  # parameter names and semantics, and take their credentials per call from
+  # the M8Flow connector profile rather than from this file.
+  m8flow_github:
+    enabled: true
+    exposed_via: ["rest", "grpc", "mcp"]
+
+  m8flow_n8n:
+    enabled: true
+    exposed_via: ["rest", "grpc", "mcp"]
+
+  m8flow_smtp:
+    enabled: true
+    exposed_via: ["rest", "grpc", "mcp"]
+
+  m8flow_slack:
+    enabled: true
+    exposed_via: ["rest", "grpc", "mcp"]
+
+  m8flow_salesforce:
+    enabled: true
+    exposed_via: ["rest", "grpc", "mcp"]
+
+  m8flow_stripe:
+    enabled: true
+    exposed_via: ["rest", "grpc", "mcp"]
+
+  m8flow_postgres:
+    enabled: true
+    exposed_via: ["rest", "grpc", "mcp"]

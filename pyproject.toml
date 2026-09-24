@@ -88,6 +88,13 @@ fhir_epic    = "node_wire_fhir_epic.logic"
 fhir_cerner  = "node_wire_fhir_cerner.logic"
 salesforce   = "node_wire_salesforce.logic"
 slack        = "node_wire_slack.logic"
+m8flow_github = "node_wire_m8flow_github.logic"
+m8flow_n8n   = "node_wire_m8flow_n8n.logic"
+m8flow_smtp  = "node_wire_m8flow_smtp.logic"
+m8flow_slack = "node_wire_m8flow_slack.logic"
+m8flow_salesforce = "node_wire_m8flow_salesforce.logic"
+m8flow_stripe = "node_wire_m8flow_stripe.logic"
+m8flow_postgres = "node_wire_m8flow_postgres.logic"
 
 [tool.setuptools.packages.find]
 where = ["src"]

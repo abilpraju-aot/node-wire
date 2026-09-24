@@ -51,6 +51,13 @@ ALL_PACKAGES=(
   packages/connectors/salesforce
   packages/connectors/http_generic
   packages/connectors/slack
+  packages/connectors/m8flow_github
+  packages/connectors/m8flow_n8n
+  packages/connectors/m8flow_smtp
+  packages/connectors/m8flow_slack
+  packages/connectors/m8flow_salesforce
+  packages/connectors/m8flow_stripe
+  packages/connectors/m8flow_postgres
 )
 
 

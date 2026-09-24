@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2026 AOT Technologies
+#
+# SPDX-License-Identifier: Apache-2.0
+
+[project]
+name = "node-wire-m8flow-postgres"
+version = "1.1.0"
+description = "Node Wire connector — PostgreSQL query and execute (M8Flow contract)"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [{ name = "AOT Technologies", email = "opensource@aot-technologies.com" }]
+
+dependencies = [
+    "node-wire-runtime>=1.1.0",
+    "psycopg[binary]>=3.1,<4.0",
+]
+
+[project.entry-points."node_wire.connectors"]
+m8flow_postgres = "node_wire_m8flow_postgres.logic"
+
+[build-system]
+requires = ["setuptools>=69.0.0", "cython>=3.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["../../../src"]
+include = ["node_wire_m8flow_postgres*"]
