@@ -1,0 +1,3903 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Enterprise Connectors for AI & Workflow Systems">
+      
+      
+      
+        <link rel="canonical" href="https://aot-technologies.github.io/node-wire/packaging/">
+      
+      
+        <link rel="prev" href="../public-api/">
+      
+      
+        <link rel="next" href="../local-packages-to-images/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Packaging - Node Wire</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#packaging-publishing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Node Wire" class="md-header__button md-logo" aria-label="Node Wire" data-md-component="logo">
+      
+  <img src="../images/nw-favicon-black.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Node Wire
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Packaging
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AOT-Technologies/node-wire" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AOT-Technologies/node-wire
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reading/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reading Map
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../architecture/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../connectors/" class="md-tabs__link">
+          
+  
+  
+  Connectors
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../cli/" class="md-tabs__link">
+          
+  
+  
+  CLI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mcp/" class="md-tabs__link">
+          
+  
+  
+  MCP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../contributing/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Ship
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../privacy/" class="md-tabs__link">
+          
+  
+  
+  Compliance
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../adr/" class="md-tabs__link">
+          
+  
+  
+  Decisions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="https://github.com/AOT-Technologies/node-wire/blob/main/CODE_OF_CONDUCT.md" class="md-tabs__link">
+          
+  
+  
+  Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Node Wire" class="md-nav__button md-logo" aria-label="Node Wire" data-md-component="logo">
+      
+  <img src="../images/nw-favicon-black.png" alt="logo">
+
+    </a>
+    Node Wire
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AOT-Technologies/node-wire" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AOT-Technologies/node-wire
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/seams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/tenancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tenancy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connector-bindings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REST / MCP / gRPC Bindings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connectors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connectors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use a Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connector-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connector Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connectors-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_drive_connector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Drive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../salesforce_connector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Salesforce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slack_connector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/nw-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nw CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/nw-connector-builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nw-connector-builder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/nw-connector-builder-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generator Contract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/openapi-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenAPI Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/nw-connector-builder-codegen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codegen Behaviour
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/nw-mcp-builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nw-mcp-builder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stacklok-mcp-servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    stacklok MCP servers (nw gen-stacklok)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toolhive_agent_scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Scenario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-client-oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client OAuth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-quality-compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-security-gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality & Security Gates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../public-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Public API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ship
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ship
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package inventory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-new-publishable-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a new publishable connector
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding a new publishable connector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-runtime-dev-always-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1 — Runtime (dev, always required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-publishable-pypi-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 — Publishable PyPI package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ci-allowlist-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI allowlist updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-standalone-mcp-server-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3 — Standalone MCP server (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-package-build-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python package build lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python package build lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-all-packages-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build all packages (default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifact-layout-and-safe-command-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact layout and safe command usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-a-single-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build a single package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-wheel-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspect wheel contents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-from-wheels-and-verify-entry-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install from wheels and verify entry points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-connector-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify connector loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-consumption-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client consumption model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client consumption model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-loading-knobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime loading knobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectorsyaml-and-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connectors.yaml and secrets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-process-tag-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release process (tag-first)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Release process (tag-first)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stable-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stable release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beta-pypi-publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beta PyPI publish
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-publish-flow-trusted-publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI publish flow (Trusted Publisher)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-demo-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker demo images
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-pypi-local-validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-PyPI local validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../local-packages-to-images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Images
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-rollback/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release & Rollback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compliance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compliance/hipaa-considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HIPAA Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Decisions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/0001-stacklok-mcp-builder-on-node-wire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0001 stacklok MCP builder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/0002-documentation-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0002 Documentation lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adr/0003-python-3-11-to-3-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0003 Python 3.11 to 3.13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/AOT-Technologies/node-wire/blob/main/CODE_OF_CONDUCT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code of Conduct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/AOT-Technologies/node-wire/blob/main/GOVERNANCE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/AOT-Technologies/node-wire/blob/main/SUPPORT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/AOT-Technologies/node-wire/blob/main/SECURITY.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/AOT-Technologies/node-wire/blob/main/CHANGELOG.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package inventory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-new-publishable-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a new publishable connector
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding a new publishable connector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-runtime-dev-always-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1 — Runtime (dev, always required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-publishable-pypi-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 — Publishable PyPI package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ci-allowlist-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI allowlist updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-standalone-mcp-server-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3 — Standalone MCP server (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-package-build-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python package build lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python package build lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-all-packages-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build all packages (default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifact-layout-and-safe-command-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact layout and safe command usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-a-single-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build a single package
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-wheel-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspect wheel contents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-from-wheels-and-verify-entry-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install from wheels and verify entry points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-connector-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify connector loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-consumption-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client consumption model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client consumption model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-loading-knobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime loading knobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectorsyaml-and-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connectors.yaml and secrets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-process-tag-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release process (tag-first)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Release process (tag-first)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stable-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stable release
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beta-pypi-publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beta PyPI publish
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-publish-flow-trusted-publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI publish flow (Trusted Publisher)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-demo-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker demo images
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-pypi-local-validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-PyPI local validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Ship
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<!--
+SPDX-FileCopyrightText: 2026 AOT Technologies
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
+<h1 id="packaging-publishing">Packaging &amp; publishing<a class="headerlink" href="#packaging-publishing" title="Anchor link to this section">&para;</a></h1>
+<p>Node Wire ships as multiple independent PyPI packages (the runtime plus one package per connector) built from a single monorepo. Every package builds one pure-Python wheel (<code>py3-none-any</code>), which installs on every supported Python version (3.11–3.13) and operating system.</p>
+<hr />
+<h2 id="package-inventory">Package inventory<a class="headerlink" href="#package-inventory" title="Anchor link to this section">&para;</a></h2>
+<p>The following table lists every package the build script produces:</p>
+<table>
+<thead>
+<tr>
+<th>PyPI name</th>
+<th>Source path</th>
+<th>Entry-point key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>node-wire-runtime</code></td>
+<td><code>src/node_wire_runtime/</code></td>
+<td>— (no entry point; this is the runtime)</td>
+</tr>
+<tr>
+<td><code>node-wire-bindings</code> <strong>(not published)</strong></td>
+<td><code>src/bindings/</code> (MCP surface)</td>
+<td>— (factory / invoke / mcp_server for MCP images)</td>
+</tr>
+<tr>
+<td><code>node-wire-toolhive</code> <strong>(not published)</strong></td>
+<td><code>src/node_wire_toolhive/</code></td>
+<td>— (credential relay, tenant header, config tools for <code>nw gen-stacklok</code> servers)</td>
+</tr>
+<tr>
+<td><code>node-wire-fhir-cerner</code></td>
+<td><code>src/node_wire_fhir_cerner/</code></td>
+<td><code>fhir_cerner</code></td>
+</tr>
+<tr>
+<td><code>node-wire-fhir-epic</code></td>
+<td><code>src/node_wire_fhir_epic/</code></td>
+<td><code>fhir_epic</code></td>
+</tr>
+<tr>
+<td><code>node-wire-google-drive</code></td>
+<td><code>src/node_wire_google_drive/</code></td>
+<td><code>google_drive</code></td>
+</tr>
+<tr>
+<td><code>node-wire-http</code></td>
+<td><code>src/node_wire_http_generic/</code></td>
+<td><code>http_generic</code></td>
+</tr>
+<tr>
+<td><code>node-wire-salesforce</code></td>
+<td><code>src/node_wire_salesforce/</code></td>
+<td><code>salesforce</code></td>
+</tr>
+<tr>
+<td><code>node-wire-slack</code></td>
+<td><code>src/node_wire_slack/</code></td>
+<td><code>slack</code></td>
+</tr>
+<tr>
+<td><code>node-wire-smtp</code></td>
+<td><code>src/node_wire_smtp/</code></td>
+<td><code>smtp</code></td>
+</tr>
+<tr>
+<td><code>node-wire-stripe</code></td>
+<td><code>src/node_wire_stripe/</code></td>
+<td><code>stripe</code></td>
+</tr>
+</tbody>
+</table>
+<p>Each connector's <code>pyproject.toml</code> lives at <code>packages/connectors/&lt;name&gt;/pyproject.toml</code>; the runtime's is at <code>packages/runtime/pyproject.toml</code>; MCP bindings at <code>packages/bindings/pyproject.toml</code>.</p>
+<p><strong>Only the runtime, the connectors, and <code>node-wire-connectors</code> ship to PyPI.</strong> <code>node-wire-connectors</code> is metadata only (<code>packages/meta</code>); it is not in the preceding table or in <code>ALL_PACKAGES</code>. <code>node-wire-bindings</code> is built as a
+local wheel (<code>scripts/build-packages.sh</code>, <code>nw gen-whl --bindings</code>) for MCP Docker
+images and is deliberately absent from the package lists in <code>publish.yml</code>,
+<code>github-release.yml</code>, and <code>security-pr.yml</code>. Do not add it to them. The same applies to
+<code>node-wire-toolhive</code>, built only for <code>nw gen-stacklok</code> images (<code>packages/toolhive/</code>).</p>
+<p><strong>Source of truth:</strong> Keep this table in sync with <code>ALL_PACKAGES</code> in <a href="https://github.com/AOT-Technologies/node-wire/blob/main/scripts/build-packages.sh"><code>scripts/build-packages.sh</code></a> (which also builds the unpublished bindings wheel); <code>tests/test_docs_lifecycle.py</code> fails unless the names here match <code>ALL_PACKAGES</code> exactly (no missing rows, no extra rows). MCP Docker images are a <strong>separate subset</strong> — see <a href="#docker-demo-images">Docker demo images</a>. <code>http_generic</code> is publishable on PyPI but does not have a standalone MCP container image.</p>
+<hr />
+<h2 id="adding-a-new-publishable-connector">Adding a new publishable connector<a class="headerlink" href="#adding-a-new-publishable-connector" title="Anchor link to this section">&para;</a></h2>
+<p>This is the one checklist for shipping a connector. Write it first (<a href="../connectors-build/">Build a connector</a>), or generate it (<a href="../cli/nw-cli/"><code>nw gen-all</code></a>, which already does the Tier 1 wiring and the <code>ALL_PACKAGES</code> entry unless you pass <code>--no-wire</code>). Then update these files to ship it on PyPI and, optionally, as a standalone MCP server.</p>
+<h3 id="tier-1-runtime-dev-always-required">Tier 1 — Runtime (dev, always required)<a class="headerlink" href="#tier-1-runtime-dev-always-required" title="Anchor link to this section">&para;</a></h3>
+<p>Update the following files and areas:</p>
+<table>
+<thead>
+<tr>
+<th>File / area</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/node_wire_&lt;name&gt;/</code></td>
+<td><code>__init__.py</code> (required, may be empty), <code>schema.py</code>, <code>logic.py</code> (with optional <code>error_map</code>), optional <code>action_spec.py</code>, <code>README.md</code></td>
+</tr>
+<tr>
+<td>Root <code>pyproject.toml</code></td>
+<td><code>[project.entry-points."node_wire.connectors"]</code> for editable dev install. <code>uv run</code> rebuilds the editable install on its next call once <code>pyproject.toml</code> changes. If you run <code>.venv/bin/python</code> or an activated venv directly, run <code>uv sync</code> first or the added entry point is not visible.</td>
+</tr>
+<tr>
+<td><code>config/connectors.yaml</code></td>
+<td><code>enabled</code>, <code>exposed_via</code>, <code>auth:</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/sample.env"><code>sample.env</code></a></td>
+<td>Commented placeholders for connector secrets, and the connector id added to the <code>NW_ALLOWED_CONNECTORS</code> line</td>
+</tr>
+<tr>
+<td><a href="../connector-reference/#connector-catalog">Connector catalog</a></td>
+<td>Add an entry with the same fields as the others</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td><code>tests/test_&lt;name&gt;.py</code>. At minimum, assert three things: the connector instantiates with its <code>connector_id</code>, <code>nw_action_metas()</code> lists the expected actions, and <code>auto_register()</code> (with <code>NW_ALLOWED_CONNECTORS</code> set) imports your <code>logic</code> module. See the <a href="../connectors-build/#minimal-http-connector-end-to-end">minimal HTTP connector example</a> and <code>tests/test_connectors_basic.py</code>. Run the suite as in <a href="../code-quality-compliance/#tests">Code quality — Tests</a>.</td>
+</tr>
+</tbody>
+</table>
+<p><code>auto_register()</code> discovers the connector via the entry point — no factory branch required.</p>
+<h3 id="tier-2-publishable-pypi-package">Tier 2 — Publishable PyPI package<a class="headerlink" href="#tier-2-publishable-pypi-package" title="Anchor link to this section">&para;</a></h3>
+<p>Update the following files:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>packages/connectors/&lt;name&gt;/pyproject.toml</code></td>
+<td>Publishable package metadata, version, entry point — see <a href="#tier-2-templates">Tier 2 templates</a></td>
+</tr>
+<tr>
+<td><code>packages/connectors/&lt;name&gt;/README.md</code></td>
+<td>The PyPI project page — see <a href="#readmemd-template"><code>README.md</code> template</a></td>
+</tr>
+<tr>
+<td><code>packages/connectors/&lt;name&gt;/LICENSE</code></td>
+<td>Copy of the repository <code>LICENSE</code>; <code>license-files</code> ships it in the wheel</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/scripts/build-packages.sh"><code>scripts/build-packages.sh</code></a></td>
+<td>Add path to <code>ALL_PACKAGES</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/.github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a></td>
+<td>Add to the <code>package</code> dropdown <strong>and</strong> the <code>allowed</code> set — see <a href="#ci-allowlist-updates">CI allowlist updates</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/.github/workflows/github-release.yml"><code>.github/workflows/github-release.yml</code></a></td>
+<td>Add to <code>package_paths</code> list — see <a href="#ci-allowlist-updates">CI allowlist updates</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/.github/workflows/security-pr.yml"><code>.github/workflows/security-pr.yml</code></a></td>
+<td>Add to the <code>pip install</code> list in the connector audit job — see <a href="#ci-allowlist-updates">CI allowlist updates</a></td>
+</tr>
+<tr>
+<td>This doc — <a href="#package-inventory">Package inventory</a></td>
+<td>Add row</td>
+</tr>
+<tr>
+<td>Root + all package <code>pyproject.toml</code></td>
+<td>Version bump on release via <code>./scripts/bump-version.py</code> (<code>nw-mcp-builder</code> excluded)</td>
+</tr>
+<tr>
+<td><code>CHANGELOG.md</code></td>
+<td>Release section (scaffolded by the bump script; fill in notes before tagging)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tier-2-templates">Tier 2 templates<a class="headerlink" href="#tier-2-templates" title="Anchor link to this section">&para;</a></h3>
+<p>Every connector package uses the same <code>pyproject.toml</code> and <code>README.md</code> layout, so the PyPI pages read
+alike. Only the marked fields change from one connector to the next.</p>
+<h4 id="pyprojecttoml-template"><code>pyproject.toml</code> template<a class="headerlink" href="#pyprojecttoml-template" title="Anchor link to this section">&para;</a></h4>
+<p>This is the package's only build file; there is no <code>setup.py</code>. Start from the following <code>pyproject.toml</code>:</p>
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># SPDX-FileCopyrightText: 2026 AOT Technologies</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># SPDX-License-Identifier: Apache-2.0</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">[project]</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"node-wire-&lt;dist-name&gt;"</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"1.1.0"</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># "Node Wire connector for &lt;Service&gt;: &lt;the actions, in plain words&gt;"</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Node Wire connector for &lt;Service&gt;: &lt;what it does&gt;"</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"README.md"</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&gt;=3.11"</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Apache-2.0"</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">license-files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"LICENSE"</span><span class="p">]</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"AOT Technologies"</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"opensource@aot-technologies.com"</span><span class="w"> </span><span class="p">}]</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">maintainers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"AOT Technologies"</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"opensource@aot-technologies.com"</span><span class="w"> </span><span class="p">}]</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Always node-wire, connector, mcp; then the service and its domain.</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">keywords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"node-wire"</span><span class="p">,</span><span class="w"> </span><span class="s2">"connector"</span><span class="p">,</span><span class="w"> </span><span class="s2">"mcp"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;service&gt;"</span><span class="p">,</span><span class="w"> </span><span class="s2">"&lt;domain&gt;"</span><span class="p">]</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="s2">"Development Status :: 5 - Production/Stable"</span><span class="p">,</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="s2">"Framework :: AsyncIO"</span><span class="p">,</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="s2">"Intended Audience :: Developers"</span><span class="p">,</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="s2">"Operating System :: MacOS"</span><span class="p">,</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="s2">"Operating System :: Microsoft :: Windows"</span><span class="p">,</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="s2">"Operating System :: POSIX :: Linux"</span><span class="p">,</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">  </span><span class="s2">"Programming Language :: Python :: 3"</span><span class="p">,</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="s2">"Programming Language :: Python :: 3 :: Only"</span><span class="p">,</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">  </span><span class="s2">"Programming Language :: Python :: 3.11"</span><span class="p">,</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">  </span><span class="s2">"Programming Language :: Python :: 3.12"</span><span class="p">,</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">  </span><span class="s2">"Programming Language :: Python :: 3.13"</span><span class="p">,</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">  </span><span class="s2">"Programming Language :: Python :: Implementation :: CPython"</span><span class="p">,</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">  </span><span class="s2">"Topic :: Software Development :: Libraries :: Application Frameworks"</span><span class="p">,</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">  </span><span class="c1"># Plus one or two Topic classifiers for the service's domain, e.g.</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">  </span><span class="c1"># "Topic :: Communications :: Email".</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">]</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="s2">"node-wire-runtime&gt;=1.1.0"</span><span class="p">,</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="c1"># Add vendor SDK or HTTP client here, for example:</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">    </span><span class="c1"># "httpx[http2]&gt;=0.27.0,&lt;0.28.0",</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="p">]</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="k">[project.entry-points.</span><span class="s2">"node_wire.connectors"</span><span class="k">]</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="err">&lt;</span><span class="n">connector_id</span><span class="err">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"node_wire_&lt;name&gt;.logic"</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="k">[project.urls]</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="n">Homepage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/AOT-Technologies/node-wire"</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="c1"># The connector's setup guide if it has one, else its connector-reference entry.</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="n">Documentation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://aot-technologies.github.io/node-wire/connector-reference/#&lt;connector_id&gt;"</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="n">Repository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/AOT-Technologies/node-wire"</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="n">Issues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/AOT-Technologies/node-wire/issues"</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="n">Changelog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/AOT-Technologies/node-wire/blob/main/CHANGELOG.md"</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="k">[build-system]</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"setuptools&gt;=69.0.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"wheel"</span><span class="p">]</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"setuptools.build_meta"</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="k">[tool.setuptools.packages.find]</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="n">where</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"../../../src"</span><span class="p">]</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="n">include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"node_wire_&lt;name&gt;*"</span><span class="p">]</span>
+</span></code></pre></div>
+<h4 id="readmemd-template"><code>README.md</code> template<a class="headerlink" href="#readmemd-template" title="Anchor link to this section">&para;</a></h4>
+<p>The README is the PyPI project page, so every link is an absolute URL — relative links break on
+PyPI. Keep the sections in this order and drop an optional one rather than leave it empty.</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;!--
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>SPDX-FileCopyrightText: 2026 AOT Technologies
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>SPDX-License-Identifier: Apache-2.0
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>--&gt;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="gh"># node-wire-&lt;dist-name&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>&lt;One or two sentences: which service, and what an agent or app can do with it.&gt;
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Part of [<span class="nt">Node Wire</span>](<span class="na">https://github.com/AOT-Technologies/node-wire</span>). Every call runs through the
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Node Wire runtime, so it gets input validation, retries with a circuit breaker, scope policy,
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>a shared error taxonomy, and OpenTelemetry tracing. A Node Wire host exposes each action over REST,
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>gRPC and MCP.
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="gu">## Install</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="sb">```bash</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>pip<span class="w"> </span>install<span class="w"> </span>node-wire-&lt;dist-name&gt;
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="sb">```</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>This pulls in [<span class="sb">`node-wire-runtime`</span>](https://pypi.org/project/node-wire-runtime/). Pre-releases
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>are published as <span class="sb">`X.Y.ZbN`</span>; install one with <span class="sb">`pip install --pre node-wire-&lt;dist-name&gt;`</span>. To install
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>every connector at once, use [<span class="sb">`node-wire-connectors`</span>](https://pypi.org/project/node-wire-connectors/).
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>The wheel is pure Python (<span class="sb">`py3-none-any`</span>) and installs on CPython 3.11, 3.12 and 3.13 on any
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>OS and CPU.
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="gu">## Actions</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>The connector registers as <span class="sb">`&lt;connector_id&gt;`</span>. MCP tool names are <span class="sb">`&lt;connector_id&gt;_&lt;action&gt;`</span>, with
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>dots replaced by underscores.
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>| Action | MCP tool | What it does |
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>|---|---|---|
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>| <span class="sb">`&lt;action&gt;`</span> | <span class="sb">`&lt;connector_id&gt;_&lt;action&gt;`</span> | &lt;one line&gt; |
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="gu">## Configuration</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>Add the connector to <span class="sb">`config/connectors.yaml`</span>:
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="sb">```yaml</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="nt">connectors</span><span class="p">:</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">  </span><span class="nt">&lt;connector_id&gt;</span><span class="p">:</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">    </span><span class="nt">exposed_via</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"rest"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"grpc"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"mcp"</span><span class="p p-Indicator">]</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">    </span><span class="nt">auth</span><span class="p">:</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">      </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;provider&gt;</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">      </span><span class="c1"># ...</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="sb">```</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>Secrets are read through the configured secret provider (environment variables by default):
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>| Variable | Purpose |
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>|---|---|
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>| <span class="sb">`&lt;VAR&gt;`</span> | &lt;what it holds&gt; |
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="gu">## Usage</span>
+</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>
+</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>Set <span class="sb">`NW_ALLOWED_CONNECTORS=&lt;connector_id&gt;`</span> (comma-separate several). Node Wire loads only the
+</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>connectors listed there, and discovers them through the <span class="sb">`node_wire.connectors`</span> entry point.
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>A Node Wire host (the REST, gRPC or MCP server, or <span class="sb">`ConnectorFactory`</span>) then builds the connector
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>from the configuration above. See [<span class="nt">Use a connector</span>](<span class="na">https://aot-technologies.github.io/node-wire/connectors/</span>).
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="gu">## Security notes</span>
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>&lt;Optional. Egress restrictions, sandboxing, privacy of logged data.&gt;
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="gu">## Documentation</span>
+</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>
+</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Node Wire on GitHub</span>](<span class="na">https://github.com/AOT-Technologies/node-wire</span>): source, issues and full documentation
+</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">&lt;Service&gt; setup guide</span>](<span class="na">&lt;url&gt;</span>) &lt;!-- optional --&gt;
+</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Connector reference</span>](<span class="na">https://aot-technologies.github.io/node-wire/connector-reference/#&lt;connector_id&gt;</span>)
+</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Configuration</span>](<span class="na">https://aot-technologies.github.io/node-wire/configuration/</span>)
+</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Error codes</span>](<span class="na">https://aot-technologies.github.io/node-wire/errors/</span>)
+</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Changelog</span>](<span class="na">https://github.com/AOT-Technologies/node-wire/blob/main/CHANGELOG.md</span>)
+</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>
+</span><span id="__span-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="gu">## License</span>
+</span><span id="__span-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>
+</span><span id="__span-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>Apache-2.0. See [<span class="nt">LICENSE</span>](<span class="na">https://github.com/AOT-Technologies/node-wire/blob/main/LICENSE</span>).
+</span></code></pre></div>
+<p>Replace the following:</p>
+<ul>
+<li><code>&lt;name&gt;</code>: the connector's snake_case name, for example, <code>my_service</code>.</li>
+<li><code>&lt;dist-name&gt;</code>: the same name in kebab case, for example, <code>my-service</code>.</li>
+<li><code>&lt;connector_id&gt;</code>: the entry-point key, the same string used in <code>config/connectors.yaml</code> and <code>NW_ALLOWED_CONNECTORS</code>.</li>
+</ul>
+<h3 id="ci-allowlist-updates">CI allowlist updates<a class="headerlink" href="#ci-allowlist-updates" title="Anchor link to this section">&para;</a></h3>
+<p>Three workflows each hold a hard-coded list of publishable packages. Each workflow file is the
+source of truth for its list. Add <code>packages/connectors/&lt;name&gt;</code> to each:</p>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Where the list is</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/.github/workflows/publish.yml"><code>publish.yml</code></a></td>
+<td><code>on.workflow_dispatch.inputs.package.options</code> <strong>and</strong> the <code>allowed</code> set in the validate step</td>
+<td>Both must agree. A path missing from <code>allowed</code> fails at validate; a path missing from the dropdown is unreachable.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/.github/workflows/github-release.yml"><code>github-release.yml</code></a></td>
+<td><code>package_paths</code> in the release-manifest step</td>
+<td>Lists what the release manifest covers.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/.github/workflows/security-pr.yml"><code>security-pr.yml</code></a></td>
+<td>The <code>pip install</code> list in the <strong>Install packages and audit tool</strong> step</td>
+<td>All listed packages install into one environment that a single <code>pip-audit</code> run scans.</td>
+</tr>
+</tbody>
+</table>
+<p>Never add <code>packages/bindings</code> or <code>packages/toolhive</code> to them. Those are local-only wheels.</p>
+<h3 id="tier-3-standalone-mcp-server-optional">Tier 3 — Standalone MCP server (optional)<a class="headerlink" href="#tier-3-standalone-mcp-server-optional" title="Anchor link to this section">&para;</a></h3>
+<p>Complete Tier 2 (the PyPI wheel) first. The Dockerfile copies pre-built <code>.whl</code> files from <code>packages/connectors/&lt;name&gt;/dist/</code>; that directory does not exist until you run <code>bash scripts/build-packages.sh packages/connectors/&lt;name&gt;</code>.</p>
+<p>Use when you need a dedicated Docker/ToolHive image for a single connector (not required for the combined <code>agents.mcp_entrypoint</code> server). For the wheel → image mapping see <a href="../local-packages-to-images/">local-packages-to-images.md</a>; for an existing connector's entrypoint/Dockerfile, use <code>src/agents/&lt;name&gt;_mcp.py</code> and <code>docker/&lt;name&gt;/Dockerfile</code> as templates.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/agents/&lt;name&gt;_mcp.py</code></td>
+<td>Per-connector MCP agent entrypoint</td>
+</tr>
+<tr>
+<td>Root <code>pyproject.toml</code></td>
+<td><code>[project.scripts]</code> entry, for example, <code>nw-&lt;kebab-name&gt;</code></td>
+</tr>
+<tr>
+<td><code>docker/&lt;name&gt;/Dockerfile</code></td>
+<td>Demo MCP image</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/scripts/build-mcp-images.sh"><code>scripts/build-mcp-images.sh</code></a></td>
+<td><code>docker build</code> block</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AOT-Technologies/node-wire/blob/main/docker-compose.mcp.yml"><code>docker-compose.mcp.yml</code></a></td>
+<td>Service + <code>NW_ALLOWED_CONNECTORS</code></td>
+</tr>
+<tr>
+<td><a href="../local-packages-to-images/">local-packages-to-images.md</a></td>
+<td>Add a row to the wheel → image table</td>
+</tr>
+<tr>
+<td><a href="../cli/nw-mcp-builder/#supported-connectors">nw-mcp-builder</a></td>
+<td>Add to "Supported connectors" if it also gets a generated host</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="python-package-build-lifecycle">Python package build lifecycle<a class="headerlink" href="#python-package-build-lifecycle" title="Anchor link to this section">&para;</a></h2>
+<p>Prerequisites: <a href="https://docs.astral.sh/uv/">uv</a> (the script uses <code>uv build</code>), or <code>python3 -m pip install build</code>. No compiler or Docker is needed. Run <code>bash scripts/build-packages.sh --help</code> for usage.</p>
+<h3 id="build-all-packages-default">Build all packages (default)<a class="headerlink" href="#build-all-packages-default" title="Anchor link to this section">&para;</a></h3>
+<p>For a single connector (or runtime) from the orchestrator CLI, see <a href="../cli/nw-cli/"><code>nw gen-whl</code></a>, which wraps this script. To build every package, run:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bash<span class="w"> </span>scripts/build-packages.sh
+</span></code></pre></div>
+<p>This builds each package path listed in <code>ALL_PACKAGES</code> in the script (see the <a href="#package-inventory">Package inventory</a> for the current set). Each package gets one <code>py3-none-any</code> wheel. The same wheel goes into the MCP host images (Debian), the <code>nw gen-stacklok</code> images (Alpine), and PyPI. Before each build the script clears the package's <code>build/</code> directory and old <code>dist/*.whl</code> files. Afterwards it checks that the wheel is <code>py3-none-any</code> and contains no compiled <code>.so</code>/<code>.pyd</code> files.</p>
+<p>The old platform flags (<code>--host-only</code>, <code>--linux-only</code>, <code>--all</code>, <code>--musllinux</code>, <code>--cibw-linux</code>) are accepted and ignored, with a note.</p>
+<h3 id="artifact-layout-and-safe-command-usage">Artifact layout and safe command usage<a class="headerlink" href="#artifact-layout-and-safe-command-usage" title="Anchor link to this section">&para;</a></h3>
+<p><code>scripts/build-packages.sh</code> writes wheels per package under <code>packages/**/dist/</code> (there is no single repo-root <code>dist/</code> output).</p>
+<p>Before using wildcard wheel commands, clear old wheel artifacts so commands do not accidentally match stale versions:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rm<span class="w"> </span>-f<span class="w"> </span>packages/runtime/dist/*.whl
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>rm<span class="w"> </span>-f<span class="w"> </span>packages/connectors/stripe/dist/*.whl
+</span></code></pre></div>
+<h3 id="build-a-single-package">Build a single package<a class="headerlink" href="#build-a-single-package" title="Anchor link to this section">&para;</a></h3>
+<p>Pass the package path:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bash<span class="w"> </span>scripts/build-packages.sh<span class="w"> </span>packages/connectors/stripe
+</span></code></pre></div>
+<h3 id="inspect-wheel-contents">Inspect wheel contents<a class="headerlink" href="#inspect-wheel-contents" title="Anchor link to this section">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>unzip<span class="w"> </span>-l<span class="w"> </span>packages/connectors/stripe/dist/node_wire_stripe-*-py3-none-any.whl
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Shows the package's .py modules and its .dist-info metadata</span>
+</span></code></pre></div>
+<h3 id="install-from-wheels-and-verify-entry-points">Install from wheels and verify entry points<a class="headerlink" href="#install-from-wheels-and-verify-entry-points" title="Anchor link to this section">&para;</a></h3>
+<p>Install the wheels into a clean environment and list the registered entry points:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Install into an active (clean) virtual env</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>pip<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>packages/runtime/dist/node_wire_runtime-*.whl<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>packages/connectors/stripe/dist/node_wire_stripe-*.whl
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># Confirm entry points registered</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="s2">from importlib.metadata import entry_points</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="s2">print(list(entry_points(group='node_wire.connectors')))</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="s2">"</span>
+</span></code></pre></div>
+<h3 id="verify-connector-loading">Verify connector loading<a class="headerlink" href="#verify-connector-loading" title="Anchor link to this section">&para;</a></h3>
+<p>Check that <code>auto_register()</code> loads the installed connectors:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="s2">from node_wire_runtime.connector_registry import auto_register</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="s2">loaded = auto_register()</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="s2">print('Loaded:', loaded)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="s2">"</span>
+</span></code></pre></div>
+<hr />
+<h2 id="client-consumption-model">Client consumption model<a class="headerlink" href="#client-consumption-model" title="Anchor link to this section">&para;</a></h2>
+<p><code>pip install node-wire-connectors</code> installs the runtime and every public connector. The meta package has no extras. A subset is the connector packages themselves:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip<span class="w"> </span>install<span class="w"> </span>node-wire-smtp<span class="w"> </span>node-wire-google-drive
+</span></code></pre></div>
+<p>A downstream client can also name the runtime and individual connectors:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>pip<span class="w"> </span>install<span class="w"> </span>node-wire-runtime<span class="w"> </span>node-wire-stripe<span class="w"> </span>node-wire-fhir-epic
+</span></code></pre></div>
+<p>At startup, <code>auto_register()</code> discovers all installed connectors via the <code>node_wire.connectors</code> <a href="https://packaging.python.org/en/latest/specifications/entry-points/">entry-point group</a> — no explicit import list required.</p>
+<h3 id="runtime-loading-knobs">Runtime loading knobs<a class="headerlink" href="#runtime-loading-knobs" title="Anchor link to this section">&para;</a></h3>
+<p>Fail-closed connector loading and related env vars are documented in
+<a href="../configuration/#required-variables">configuration.md</a>. Packaging clients must
+still set <code>NW_ALLOWED_CONNECTORS</code> and may set <code>NW_CONNECTOR_MODULE_PREFIX</code>
+(default <code>node_wire_</code>) when embedding wheels.</p>
+<hr />
+<h2 id="connectorsyaml-and-secrets"><code>connectors.yaml</code> and secrets<a class="headerlink" href="#connectorsyaml-and-secrets" title="Anchor link to this section">&para;</a></h2>
+<p>An installed connector runs only if it is <code>enabled</code> in <code>connectors.yaml</code> and named in
+<code>NW_ALLOWED_CONNECTORS</code>. Keys: <a href="../connector-reference/#configconnectorsyaml">Connector reference</a>.
+Per-connector secrets: <a href="../connector-reference/#connector-catalog">catalog</a>. Secret backends:
+<a href="../configuration/#secrets-management">Configuration — Secrets management</a>.
+<code>src/node_wire_runtime/connectors.yaml.sample</code> is a commented template with every supported field.</p>
+<hr />
+<h2 id="release-process-tag-first">Release process (tag-first)<a class="headerlink" href="#release-process-tag-first" title="Anchor link to this section">&para;</a></h2>
+<p>Stable releases are <strong>tag-driven</strong>: create and push the tag first, then publish each
+package from it. Betas need no tag — publish derives the pre-release version itself.</p>
+<ul>
+<li><strong>Stable</strong> (<code>v1.2.0</code>) — Create Release Tag → GitHub Release → publish with <code>channel: release</code></li>
+<li><strong>Beta</strong> — publish with <code>channel: beta</code> from any branch or tag (no tag, no GitHub Release)</li>
+</ul>
+<p>Both channels use the same <code>.github/workflows/publish.yml</code>; its <code>channel</code> input
+selects the behaviour, and the version always comes from the selected package's
+<code>pyproject.toml</code> rather than from a tag name. PyPI treats PEP 440 pre-releases as
+pre-releases: <code>pip install node-wire-runtime</code> stays on stable;
+<code>pip install --pre node-wire-runtime</code> or an exact pin (for example
+<code>node-wire-runtime==1.2.0b1</code>) installs a beta.</p>
+<p><strong>Create Release Tag</strong> (<code>.github/workflows/create-tag.yml</code>) accepts both
+<code>MAJOR.MINOR.PATCH</code> and PEP 440 pre-releases (<code>aN</code> / <code>bN</code> / <code>rcN</code>). It checks
+that the tag is free, package versions match, and <code>CHANGELOG.md</code> has the matching
+entry, then pushes <code>v…</code>. Stable releases use it with the version from the following steps; <a href="#beta-pypi-publish">Beta PyPI publish</a> does not use it at all.</p>
+<h3 id="stable-release">Stable release<a class="headerlink" href="#stable-release" title="Anchor link to this section">&para;</a></h3>
+<h4 id="step-1-prepare-the-release">Step 1 — Prepare the release<a class="headerlink" href="#step-1-prepare-the-release" title="Anchor link to this section">&para;</a></h4>
+<ol>
+<li>Bump lockstep package versions with <code>./scripts/bump-version.py X.Y.Z</code> (root
+   <code>pyproject.toml</code>, every <code>packages/**/pyproject.toml</code>, the <code>nw-*</code> tool
+   <code>pyproject.toml</code> files and <code>__version__</code> strings, and package
+   <code>node-wire-runtime&gt;=…</code> floors), then run <code>uv lock</code> in the root and each
+   <code>nw-*</code> directory.</li>
+<li>Fill in the scaffolded <code>CHANGELOG.md</code> notes. Create Release Tag and GitHub
+   Release both require a dated <code>## [X.Y.Z] - YYYY-MM-DD</code> section and a footer
+   link <code>[X.Y.Z]: …/releases/tag/vX.Y.Z</code> (the bump script scaffolds these when
+   missing).</li>
+<li>Merge to <code>main</code> and confirm required CI checks are green.</li>
+</ol>
+<h4 id="step-2-create-the-tag">Step 2 — Create the tag<a class="headerlink" href="#step-2-create-the-tag" title="Anchor link to this section">&para;</a></h4>
+<p>Dispatch <strong>Create Release Tag</strong> in Actions with <code>version</code> set to <code>1.0.0</code> (no
+leading <code>v</code>). For stable releases, run this before dispatching "GitHub Release"
+in Step 3.</p>
+<p>Manual fallback, if you must create the tag by hand (bypasses the preceding validation):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Release 1.0.0"</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v1.0.0
+</span></code></pre></div>
+<h4 id="step-3-create-the-github-release">Step 3 — Create the GitHub Release<a class="headerlink" href="#step-3-create-the-github-release" title="Anchor link to this section">&para;</a></h4>
+<p>Dispatch <strong>GitHub Release</strong> in Actions with <code>version</code> set to <code>1.0.0</code> (no leading <code>v</code>).
+Stable versions only — the workflow rejects PEP 440 pre-releases.</p>
+<p><strong>Workflow:</strong> <code>.github/workflows/github-release.yml</code> — manual <code>workflow_dispatch</code>
+after the tag has been pushed.</p>
+<p>The workflow does the following:</p>
+<ol>
+<li>Validates all package versions match the tag.</li>
+<li>Verifies <code>CHANGELOG.md</code> has the matching section and release link.</li>
+<li>Generates <code>sbom.json</code> (release-level SBOM).</li>
+<li>Creates <code>release-manifest.txt</code> listing all publishable package paths (one per entry in <code>github-release.yml</code>'s <code>package_paths</code> list).</li>
+<li>Creates the GitHub Release with changelog notes, SBOM, and manifest attached.</li>
+</ol>
+<h4 id="step-4-publish-packages-to-pypi">Step 4 — Publish packages to PyPI<a class="headerlink" href="#step-4-publish-packages-to-pypi" title="Anchor link to this section">&para;</a></h4>
+<p>After the GitHub Release exists, dispatch <code>.github/workflows/publish.yml</code> <strong>once per
+package</strong> (once per entry in the <code>allowed</code> set in that workflow). There is no version
+input — the version is read from the selected package's <code>pyproject.toml</code>, so dispatch
+from the release tag via the <strong>Use workflow from</strong> dropdown.</p>
+<p>The workflow takes the following required inputs:</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Example</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>channel</code></td>
+<td><code>release</code></td>
+<td><code>release</code> publishes the declared version as-is; <code>beta</code> derives the next pre-release</td>
+</tr>
+<tr>
+<td><code>package</code></td>
+<td><code>packages/connectors/stripe</code></td>
+<td>Dropdown backed by the workflow allowlist</td>
+</tr>
+</tbody>
+</table>
+<p>For <code>channel: release</code>, the workflow checks the following before it builds:</p>
+<ul>
+<li><code>package</code> is allowlisted.</li>
+<li>Package <code>pyproject.toml</code> declares a stable <code>X.Y.Z</code> version.</li>
+<li>That version is not already published on PyPI.</li>
+<li><code>CHANGELOG.md</code> contains the matching release section/link.</li>
+<li>A GitHub Release exists for <code>v&lt;version&gt;</code>.</li>
+</ul>
+<p>The pipeline runs the following steps:</p>
+<ol>
+<li>Build the package's single <code>py3-none-any</code> wheel in one Ubuntu job (<code>python -m build --wheel</code>)</li>
+<li>Post-build gate: the wheel is <code>py3-none-any</code> with no compiled files (<code>packages/meta</code>: no modules at all); record SHA256 checksums</li>
+<li>Install the wheel; <code>pip-audit</code> CVE gate (any known vulnerability blocks publish)</li>
+<li>Publish to PyPI via OIDC Trusted Publisher with Sigstore attestations</li>
+</ol>
+<p>The release-level SBOM is attached to the GitHub Release (step 3).
+Package publish produces PyPI Sigstore attestations per wheel; it does not
+generate a separate SBOM.</p>
+<p>The workflow file is kept as <code>publish.yml</code> and the
+workflow name as <code>Publish Node Wire package</code> so the existing PyPI Trusted Publisher
+configuration continues to work. Stable and beta both use this same publisher.</p>
+<p>If a published release must be withdrawn or replaced, follow
+<a href="../release-rollback/">release-rollback.md</a> (PyPI yank, corrective patch release,
+and GitHub tag/release handling).</p>
+<h3 id="beta-pypi-publish">Beta PyPI publish<a class="headerlink" href="#beta-pypi-publish" title="Anchor link to this section">&para;</a></h3>
+<p>Beta builds ship to the <strong>same PyPI projects</strong> as PEP 440 pre-releases. They
+<strong>never</strong> create a GitHub Release (<code>github-release.yml</code> rejects pre-release
+versions).</p>
+<p>Leave <code>pyproject.toml</code> on the plain <code>X.Y.Z</code> version you are working towards —
+publish derives the pre-release suffix itself.</p>
+<ol>
+<li>Confirm the packages declare the target stable version (for example, <code>1.2.0</code>) and CI is green.</li>
+<li>Dispatch <code>.github/workflows/publish.yml</code> from that branch or tag, once per
+   allowlisted package, with <code>channel: beta</code>. The workflow reads what is already on
+   PyPI and publishes the next unused suffix — <code>1.2.0b1</code>, then <code>1.2.0b2</code>, and so on —
+   stamping it into the wheel at build time. No changelog entry, git tag, or GitHub
+   Release is required; pipeline steps are otherwise identical to stable.</li>
+</ol>
+<blockquote>
+<p>[!NOTE]
+<code>./scripts/bump-version.py</code> still accepts <code>aN</code>/<code>bN</code>/<code>rcN</code>, but publish
+rejects a pre-release <code>project.version</code>. Keep the source tree on <code>X.Y.Z</code> and let
+<code>channel: beta</code> derive the suffix.</p>
+</blockquote>
+<p>Install a beta with:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--pre<span class="w"> </span>node-wire-runtime
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># or pin exactly:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>pip<span class="w"> </span>install<span class="w"> </span>node-wire-runtime<span class="o">==</span><span class="m">1</span>.2.0b1
+</span></code></pre></div>
+<hr />
+<h2 id="ci-publish-flow-trusted-publisher">CI publish flow (Trusted Publisher)<a class="headerlink" href="#ci-publish-flow-trusted-publisher" title="Anchor link to this section">&para;</a></h2>
+<p>See <a href="#release-process-tag-first">Release process (tag-first)</a> for the full
+end-to-end flow (stable and beta). The package publish workflow is
+<code>.github/workflows/publish.yml</code>.</p>
+<hr />
+<h2 id="docker-demo-images">Docker demo images<a class="headerlink" href="#docker-demo-images" title="Anchor link to this section">&para;</a></h2>
+<p>The <code>docker/*/Dockerfile</code> images are demonstration templates for running one connector as a
+standalone MCP server. They are not production orchestration artefacts. Building them, the wheels
+each one needs, and <code>docker-compose.mcp.yml</code>: <a href="../local-packages-to-images/">Local wheels → images</a>.</p>
+<hr />
+<h2 id="pre-pypi-local-validation-checklist">Pre-PyPI local validation checklist<a class="headerlink" href="#pre-pypi-local-validation-checklist" title="Anchor link to this section">&para;</a></h2>
+<p>Run these gates before triggering the CI publish workflow (default <code>build-packages.sh</code> is enough; <code>--all</code> is optional for broader local wheels):</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>bash scripts/build-packages.sh</code> exits 0</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>unzip -l packages/&lt;pkg&gt;/dist/*.whl</code> shows no <code>.py</code> files</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Install wheels into a clean venv; confirm entry points resolve</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>auto_register()</code> loads expected connectors</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>pytest tests/test_connector_registry.py tests/test_connectors_basic.py</code> passes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Wheel SHA256 checksums recorded and match expected values</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>package</code> and <code>channel</code> inputs are correct before dispatching, and for <code>channel: release</code> the tag and GitHub Release already exist</li>
+</ul>
+<hr />
+<h2 id="related-docs">Related docs<a class="headerlink" href="#related-docs" title="Anchor link to this section">&para;</a></h2>
+<ul>
+<li><a href="../local-packages-to-images/">Local package to Docker image workflow</a> — build wheels and MCP images locally</li>
+<li><a href="../release-rollback/">Release rollback and unpublish runbook</a> — yank and corrective releases</li>
+<li><a href="../versioning/">Versioning policy</a> — when to bump MAJOR, MINOR, or PATCH</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../public-api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Public API">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Public API
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../local-packages-to-images/" class="md-footer__link md-footer__link--next" aria-label="Next: Local Images">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Local Images
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/AOT-Technologies/node-wire" target="_blank" rel="noopener" title="Node Wire on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/company/aot-technologies" target="_blank" rel="noopener" title="AOT Technologies on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
