@@ -236,15 +236,20 @@ class M8FlowSmtpConnector(BaseConnector):
     # Scoped to m8flow_smtp only. The original exception types are raised
     # unwrapped so this map actually applies -- re-raising as a builtin would
     # make the runtime's MRO lookup miss every entry here.
+    #
+    # Nothing here is RETRYABLE on purpose: the runtime would resend up to 3x.
+    # A send is not idempotent (a drop after DATA may already have delivered,
+    # so a retry duplicates the mail), and the retries outlive the caller's
+    # HTTP timeout. The workflow task is the retry unit.
     error_map: ClassVar[Dict[Type[BaseException], Tuple[ErrorCategory, str]]] = {
         SmtpRelayNotAllowedError: (ErrorCategory.FATAL, "SMTP_RELAY_NOT_ALLOWED"),
         SmtpAttachmentError: (ErrorCategory.BUSINESS, "SMTP_ATTACHMENT_ERROR"),
         SmtpNoRecipientsError: (ErrorCategory.BUSINESS, "SMTP_NO_RECIPIENTS"),
         smtplib.SMTPAuthenticationError: (ErrorCategory.AUTH, "SMTP_AUTH_ERROR"),
-        smtplib.SMTPConnectError: (ErrorCategory.RETRYABLE, "SMTP_CONNECT_ERROR"),
-        smtplib.SMTPServerDisconnected: (ErrorCategory.RETRYABLE, "SMTP_DISCONNECTED"),
-        TimeoutError: (ErrorCategory.RETRYABLE, "SMTP_TIMEOUT"),
-        OSError: (ErrorCategory.RETRYABLE, "SMTP_CONNECT_ERROR"),
+        smtplib.SMTPConnectError: (ErrorCategory.BUSINESS, "SMTP_CONNECT_ERROR"),
+        smtplib.SMTPServerDisconnected: (ErrorCategory.BUSINESS, "SMTP_DISCONNECTED"),
+        TimeoutError: (ErrorCategory.BUSINESS, "SMTP_TIMEOUT"),
+        OSError: (ErrorCategory.BUSINESS, "SMTP_CONNECT_ERROR"),
         smtplib.SMTPException: (ErrorCategory.BUSINESS, "SMTP_ERROR"),
     }
 

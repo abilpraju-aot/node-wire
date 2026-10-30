@@ -257,3 +257,27 @@ async def test_control_characters_in_the_subject_are_rejected() -> None:
     )
 
     assert response.error_code == "VALIDATION_ERROR"
+
+
+@pytest.mark.parametrize(
+    ("exc", "code"),
+    [
+        (TimeoutError("timed out"), "SMTP_TIMEOUT"),
+        (OSError(101, "Network is unreachable"), "SMTP_CONNECT_ERROR"),
+    ],
+)
+async def test_an_unreachable_relay_fails_once_without_retrying(exc: BaseException, code: str) -> None:
+    """A send is not idempotent: the runtime must not resend on a transport error."""
+    attempts: list[int] = []
+
+    def _unreachable(*_args: Any, **_kwargs: Any) -> Any:
+        attempts.append(1)
+        raise exc
+
+    connector = M8FlowSmtpConnector()
+    with patch("node_wire_m8flow_smtp.logic.smtplib.SMTP", _unreachable):
+        response = await connector.run({**_BASE_REQUEST, "email_to": "a@example.com"})
+
+    assert response.success is False
+    assert response.error_code == code
+    assert len(attempts) == 1
